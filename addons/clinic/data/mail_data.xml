@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+<!-- MEETING ALERT -->
+        <!-- Email template for meeting alert -->
+        <record id="meeting_alert_email" model="email.template">
+            <field name="name">Meeting Alert</field>
+            <field name="model_id" ref="model_clinic_meeting"/>
+            <field name="email_from"><![CDATA[${user.company_id.name} <noreply@clinicadhoc.com.ar>]]></field>
+            <!-- <field name="email_from"><![CDATA[${user.company_id.name} <${user.company_id.email or user.email}>]]></field> -->
+            <field name="email_to">${object.patient_id.email}</field>
+            <field name="subject">Recordatorio de Turno</field>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+    <p>Hola ${object.patient_id.name},</p>
+    <p>Este es un recordatorio de que tiene un <b>turno</b> con <b>${object.user_id.name}</b> el día 
+    <b>${object.format_date(object.date_locale(object.date),"%d/%m/%Y")}</b> a las <b>${object.format_date(object.date_locale(object.date), "%H:%M")}</b>.</p>
+    <p>Agradecemos su puntualidad y, en caso de no poder asistir, su aviso con anticipación.</p>
+    <p>Si tiene cualquier pregunta, no dude en contactarnos.</p>
+    <p>Saludos cordiales,</p>
+    <br/>
+    <div style="width: 375px; margin: 0px; padding: 0px; background-color: rgb(251, 34, 44); border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;">
+        <h3 style="margin: 0px; padding: 2px 14px; font-size: 12px; color: white;">
+            <strong style="text-transform:uppercase;">${user.company_id.name}</strong></h3>
+    </div>
+    <div style="width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: rgb(248, 248, 248);">
+        <span style="color: #222; margin-bottom: 5px; display: block; ">
+        % if user.company_id.street:
+            ${user.company_id.street}<br>
+        % endif
+        % if user.company_id.street2:
+            ${user.company_id.street2}<br>
+        % endif
+        % if user.company_id.city or user.company_id.zip:
+            ${user.company_id.zip} ${user.company_id.city}<br>
+        % endif
+        % if user.company_id.country_id:
+            ${user.company_id.state_id and ('%s, ' % user.company_id.state_id.name) or ''} ${user.company_id.country_id.name or ''}<br>
+        % endif
+        </span>
+        % if user.company_id.phone:
+            <div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; ">
+                Teléfono:&nbsp; ${user.company_id.phone}
+            </div>
+        % endif
+        % if user.company_id.website:
+            <div>
+                Web :&nbsp;<a href="${user.company_id.website}">${user.company_id.website}</a>
+            </div>
+        %endif
+        <p></p>
+    </div>
+    <div style="margin-top:20px; padding: 5px 14px; width: 347px; line-height: 16px;">
+        Un servicio de <a href="http://www.clinicadhoc.com.ar/" target="_blank">Clinic ADHOC</a><br/>
+        <a href="http://www.clinicadhoc.com.ar/" target="_blank">
+            <img style="width: 200px; margin-top:10px;" src="data:image/png;base64,${user.company_id.logo}">
+        </a>
+    </div>
+</div>
+]]></field>
+        </record>
+
+
+        <record id="server_action_clinic_meeting_reminder" model="ir.actions.server">
+            <field name="name">Reminder to Patient</field>
+            <field name="model_id" ref="model_clinic_meeting"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">self.send_mail(cr, uid, [object.id], context)</field>
+        </record>
+
+
+        <record id="filter_mail_sent_false" model="ir.filters">
+            <field name="name">Mail sent False</field>
+            <field name="model_id">clinic.meeting</field>            
+            <field name="domain">[['mail_sent', '!=', True]]</field>
+            <field name="user_id" ref="base.user_root"/>
+        </record>
+       
+
+
+        <record id="action_rule_clinic_meeting_reminder" model="base.action.rule">
+            <field name="name">Auto Reminder on Meetings two days before start date.</field>
+            <field name="model_id" ref="model_clinic_meeting"/>
+            <field name="kind">on_time</field>
+            <field name="sequence">1</field>
+            <field name="filter_id" ref="filter_mail_sent_false"/>
+            <field name="trg_date_id" ref="field_clinic_meeting_date"/>
+            <field name="trg_date_range">-2</field>
+            <field name="trg_date_range_type">day</field>
+            <field name="server_action_ids" eval="[(6,0,[ref('server_action_clinic_meeting_reminder')])]"/>
+        </record>
+
+
+<!-- MEETING INVITATION -->
+        <!-- Email template-->
+        <record id="meeting_invitation" model="email.template">
+            <field name="name">Clinic Meeting Invitation</field>
+            <field name="model_id" ref="base_calendar.model_calendar_attendee"/>
+            <field name="email_from"><![CDATA[${user.company_id.name} <noreply@clinicadhoc.com.ar>]]></field>
+            <!-- <field name="email_from"><![CDATA[${user.company_id.name} <${user.company_id.email or user.email}>]]></field> -->
+            <field name="email_to">${object.email}</field>
+            <field name="subject">Nuevo Turno</field>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+    <p>Hola ${object.partner_id.name},</p>
+    <p>Tienes un turno en <i>${user.company_id.name}</i></p>
+    <p>Debajo están los detalles del mismo.</p>
+    <table style="" bgcolor="f6f6f6" border="0" cellpadding="4" cellspacing="0" width="400 px">
+        <tbody>
+            <tr bgcolor="DFDFDF">
+                <td style="vertical-align: top;">Comienza<br>
+                </td>
+                <td style="vertical-align: top;">Termina<br>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;"><b>${object.format_date(object.date_locale(object.event_date), "%d/%m/%Y %H:%M")}<br>
+                </td>
+                <td style="vertical-align: top;"><b>${object.format_date(object.date_locale(object.event_end_date), "%d/%m/%Y %H:%M")}<br>
+                </td>
+            </tr>       
+        </tbody>
+    </table>
+    <p>Agradecemos su puntualidad y aviso con anticipación, en caso de no poder asistir.</p>
+    <p>Si tiene cualquier pregunta, no dude en contactarnos.</p>
+    <p>Saludos cordiales,</p>    
+    <div style="width: 375px; margin: 0px; padding: 0px; background-color: rgb(251, 34, 44); border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;">
+        <h3 style="margin: 0px; padding: 2px 14px; font-size: 12px; color: white;">
+            <strong style="text-transform:uppercase;">${user.company_id.name}</strong></h3>
+    </div>
+    <div style="width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: rgb(248, 248, 248);">
+        <span style="color: #222; margin-bottom: 5px; display: block; ">
+        % if user.company_id.street:
+            ${user.company_id.street}<br>
+        % endif
+        % if user.company_id.street2:
+            ${user.company_id.street2}<br>
+        % endif
+        % if user.company_id.city or user.company_id.zip:
+            ${user.company_id.zip} ${user.company_id.city}<br>
+        % endif
+        % if user.company_id.country_id:
+            ${user.company_id.state_id and ('%s, ' % user.company_id.state_id.name) or ''} ${user.company_id.country_id.name or ''}<br>
+        % endif
+        </span>
+        % if user.company_id.phone:
+            <div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; ">
+                Teléfono:&nbsp; ${user.company_id.phone}
+            </div>
+        % endif
+        % if user.company_id.website:
+            <div>
+                Web :&nbsp;<a href="${user.company_id.website}">${user.company_id.website}</a>
+            </div>
+        %endif
+        <p></p>
+    </div>
+    <div style="margin-top:20px; padding: 5px 14px; width: 347px; line-height: 16px;">
+        Un servicio de <a href="http://www.clinicadhoc.com.ar/" target="_blank">Clinic ADHOC</a><br/>
+        <a href="http://www.clinicadhoc.com.ar/" target="_blank">
+            <img style="width: 200px; margin-top:10px;" src="data:image/png;base64,${user.company_id.logo}">
+        </a>
+    </div>
+</div>
+]]></field>
+        </record>
+
+    </data>
+</openerp>

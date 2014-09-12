@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="clinic_meeting_daily_agenda_wizard_form" model="ir.ui.view">
+            <field name="name">clinic_meeting_daily_agenda_wizard_form</field>
+            <field name="model">clinic_meeting_daily_agenda_wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Daily agenda" version="7.0">
+                    <group col="2" colspan="4">
+                        <field name="date"/>
+                        <field name="user_ids"/>                   
+                    </group>
+                    <footer>
+                        <button name="daily_agenda_report" string="Print"
+                                type="object" icon="gtk-ok" />
+                        <button icon='gtk-cancel' special="cancel"
+                                string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <act_window name="Daily agenda"
+            id="action_clinic_meeting_daily_agenda_wizard"
+            multi="True"
+            res_model="clinic_meeting_daily_agenda_wizard"
+            view_mode="form" target="new" view_type="form"
+            view_id="clinic_meeting_daily_agenda_wizard_form"/>
+        
+<!--             src_model="res.partner" -->
+        
+        <menuitem
+            name="Reports"
+            id="menu_clinic_reports"
+            sequence="20"
+            parent="clinic.menu_clinic"
+            />
+
+        <menuitem
+            id="menu_clinic_meeting_daily_agenda_wizard"
+            sequence="30"
+            action="action_clinic_meeting_daily_agenda_wizard"
+            parent="menu_clinic_reports"
+            />          
+        
+    </data>
+</openerp>

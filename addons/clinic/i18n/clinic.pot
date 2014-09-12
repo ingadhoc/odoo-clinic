@@ -1,0 +1,991 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* clinic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.saas~2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-16 15:57+0000\n"
+"PO-Revision-Date: 2013-10-16 15:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Medical Insurence"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.medical_insurance,patient_ids:0
+msgid "patient_ids"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,exdate:0
+msgid "This property defines the list of date/time exceptions for a recurring calendar component."
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,we:0
+msgid "Wed"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,recurrency:0
+msgid "Recurrent Meeting"
+msgstr ""
+
+#. module: clinic
+#: model:ir.model,name:clinic.model_clinic_medical_record
+msgid "Clinic Medical Record"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Group By..."
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,week_list:0
+msgid "Sunday"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Invitation details"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,byday:0
+msgid "Fourth"
+msgstr ""
+
+#. module: clinic
+#: field:res.partner,insurance_number:0
+msgid "Insurance Number"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,day:0
+#: selection:clinic.meeting,select1:0
+msgid "Date of month"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,class:0
+msgid "Public"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,count:0
+msgid "Repeat x times"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "March"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.medical_insurance:0
+#: view:clinic.medical_record:0
+#: view:clinic.meeting.type:0
+#: view:clinic.room:0
+msgid "By object"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,week_list:0
+msgid "Friday"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,allday:0
+msgid "All Day"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,show_as:0
+msgid "Free"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,mo:0
+msgid "Mon"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.medical_insurance:0
+#: model:ir.model,name:clinic.model_clinic_medical_insurance
+msgid "medical_insurance"
+msgstr ""
+
+#. module: clinic
+#: model:ir.actions.act_window,name:clinic.action_clinic_meeting
+msgid "Clinic Meetings"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,byday:0
+msgid "Last"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "ZIP"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,rrule_type:0
+msgid "Year(s)"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: clinic
+#: view:clinic.room:0
+msgid "room"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Street..."
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Mail To"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,rrule_type:0
+msgid "Month(s)"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+#: view:res.partner:0
+#: field:res.partner,meeting_ids:0
+msgid "Meetings"
+msgstr ""
+
+#. module: clinic
+#: model:ir.actions.act_window,name:clinic.action_clinic_medical_insurance_medical_insurance
+#: model:ir.ui.menu,name:clinic.menu_medical_insurance
+#: field:res.partner,medical_insurance_id:0
+msgid "Medical Insurance"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,tu:0
+msgid "Tue"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.medical_record:0
+msgid "medical.record"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,end_date:0
+msgid "Repeat Until"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Meeting Details"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,active:0
+msgid "If the active field is set to          true, it will allow you to hide the event alarm information without removing it."
+msgstr ""
+
+#. module: clinic
+#: field:res.partner,skype:0
+msgid "Skype"
+msgstr ""
+
+#. module: clinic
+#: model:ir.model,name:clinic.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,organizer:0
+#: field:clinic.meeting,organizer_id:0
+#: model:ir.ui.menu,name:clinic.menu_clinic_organizer
+msgid "Organizer"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,recurrent_id_date:0
+msgid "Recurrent ID date"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,sa:0
+msgid "Sat"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,date_open:0
+#: selection:clinic.meeting,state:0
+msgid "Confirmed"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,attendee_ids:0
+#: field:clinic.meeting,partner_ids:0
+#: field:clinic.meeting,user_ids:0
+msgid "Attendees"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "\"base.group_no_one\""
+msgstr ""
+
+#. module: clinic
+#: model:ir.actions.act_window,name:clinic.action_clinic_meeting_type_meeting_type
+#: model:ir.ui.menu,name:clinic.menu_meeting_type
+msgid "Meeting Categories"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,su:0
+msgid "Sun"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "e.g. +32.81.81.37.00"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "State"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,select1:0
+msgid "Day of month"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,location:0
+msgid "Location"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,class:0
+msgid "Public for Employees"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,show_as:0
+msgid "Show Time as"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+#: field:clinic.meeting,room_id:0
+#: model:ir.model,name:clinic.model_clinic_room
+msgid "Room"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.medical_record,partner_id:0
+#: view:clinic.meeting:0
+#: field:clinic.meeting,patient_id:0
+#: field:res.partner,is_patient:0
+msgid "Patient"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,select1:0
+msgid "Option"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,create_date:0
+msgid "Creation Date"
+msgstr ""
+
+#. module: clinic
+#: model:ir.module.category,description:clinic.module_category_clinic
+#: model:ir.module.category,name:clinic.module_category_clinic
+#: model:ir.ui.menu,name:clinic.menu_clinic
+msgid "Clinic"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Until"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,base_calendar_url:0
+msgid "Caldav URL"
+msgstr ""
+
+#. module: clinic
+#: field:res.partner,facebook:0
+msgid "Facebook"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,recurrent_id:0
+msgid "Recurrent ID"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "July"
+msgstr ""
+
+#. module: clinic
+#: model:ir.ui.menu,name:clinic.menu_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,recurrency:0
+msgid "Recurrent"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,th:0
+msgid "Thu"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,categ_ids:0
+msgid "Categories"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting.type:0
+msgid "meeting type"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,date_closed:0
+msgid "Closed"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Share a message..."
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "e.g. www.openerp.com"
+msgstr ""
+
+#. module: clinic
+#: model:ir.actions.server,name:clinic.server_action_clinic_meeting_reminder
+msgid "Reminder to Patient"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Number..."
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "hours"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,rrule_type:0
+msgid "Week(s)"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,rrule_type:0
+msgid "Let the event automatically repeat at that interval"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,image_small:0
+msgid "Small-sized image"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Options"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,byday:0
+msgid "First"
+msgstr ""
+
+#. module: clinic
+#: field:res.partner,html_comment:0
+msgid "Comment"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "September"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "December"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,image:0
+msgid "Image"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,month_list:0
+msgid "Month"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,image_medium:0
+msgid "Medium-sized image"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,vtimezone:0
+msgid "Timezone"
+msgstr ""
+
+#. module: clinic
+#: model:ir.ui.menu,name:clinic.menu_calendar
+msgid "Calendar"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Decline"
+msgstr ""
+
+#. module: clinic
+#: model:ir.ui.menu,name:clinic.menu_contacts
+msgid "Contacts"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,fr:0
+msgid "Fri"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "(edit company address)"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,location:0
+msgid "Location of Event"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,rrule:0
+msgid "Recurrent Rule"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.medical_insurance:0
+#: view:clinic.medical_record:0
+#: view:clinic.meeting.type:0
+#: view:clinic.room:0
+msgid "By Attribute"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "base.group_no_one"
+msgstr ""
+
+#. module: clinic
+#: model:ir.model,name:clinic.model_clinic_meeting_type
+msgid "Clinic Meeting Type"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,alarm_id:0
+msgid "Reminder"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,end_type:0
+msgid "Number of repetitions"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "The"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,state:0
+msgid "Status"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,count:0
+msgid "Repeat"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "August"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,week_list:0
+msgid "Monday"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,byday:0
+msgid "Third"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "June"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,image_medium:0
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Invitations"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,write_date:0
+msgid "Write Date"
+msgstr ""
+
+#. module: clinic
+#: field:res.partner,birthday:0
+msgid "Birthday"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: clinic
+#: model:res.groups,name:clinic.group_user
+msgid "User"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,active:0
+msgid "Active"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "November"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "October"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Uncertain"
+msgstr ""
+
+#. module: clinic
+#: constraint:clinic.meeting:0
+msgid "Error ! End date cannot be set before start date."
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "January"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting.type:0
+msgid "meeting.type"
+msgstr ""
+
+#. module: clinic
+#: field:res.partner,dni:0
+msgid "DNI"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,week_list:0
+msgid "Wednesday"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.medical_record,date:0
+#: field:clinic.meeting,date:0
+msgid "Date"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Name..."
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Starting at"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,end_type:0
+msgid "End date"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Medic Partners"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,end_type:0
+msgid "Recurrence Termination"
+msgstr ""
+
+#. module: clinic
+#: model:ir.model,name:clinic.model_clinic_meeting
+#: model:res.request.link,name:clinic.request_link_meeting
+msgid "Clinic Meeting"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Day of Month"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,interval:0
+msgid "Repeat every (Days/Week/Month/Year)"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "All Day?"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,week_list:0
+msgid "Tuesday"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+#: field:clinic.meeting,user_id:0
+msgid "Responsible Medic"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "City"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Select Weekdays"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,show_as:0
+msgid "Busy"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Sales & Purchases"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Put an internal note..."
+msgstr ""
+
+#. module: clinic
+#: field:clinic.medical_record,user_id:0
+#: field:res.partner,is_medic:0
+msgid "Medic"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,rrule_type:0
+msgid "Recurrency"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,week_list:0
+msgid "Thursday"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.medical_record,body:0
+msgid "Content"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,exrule:0
+msgid "Exception Rule"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,class:0
+msgid "Private"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,exrule:0
+msgid "Defines a rule or repeating pattern of time to exclude from the recurring rule."
+msgstr ""
+
+#. module: clinic
+#: model:ir.actions.act_window,help:clinic.action_clinic_meeting
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"            Click to schedule a new meeting.\n"
+"          </p><p>\n"
+"            The calendar is shared between employees and fully integrated with\n"
+"            other applications.\n"
+"          </p>\n"
+"        "
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,rrule_type:0
+msgid "Day(s)"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,description:0
+#: field:clinic.meeting,name:0
+msgid "Description"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "May"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,byday:0
+msgid "Second"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Internal Notes"
+msgstr ""
+
+#. module: clinic
+#: model:ir.filters,name:clinic.filter_mail_sent_false
+msgid "Mail sent False"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Search Meetings"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Address"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,state:0
+msgid "Unconfirmed"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,date_deadline:0
+msgid "End Date"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "February"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.medical_insurance:0
+#: field:clinic.medical_insurance,name:0
+#: view:clinic.meeting.type:0
+#: field:clinic.meeting.type,name:0
+#: view:clinic.room:0
+#: field:clinic.room,name:0
+msgid "Name"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,exdate:0
+msgid "Exception Date/Times"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Country"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,base_calendar_alarm_id:0
+msgid "Alarm"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,mail_sent:0
+msgid "Mail Sent"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,image_small:0
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,month_list:0
+msgid "April"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,class:0
+msgid "Privacy"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,week_list:0
+msgid "Weekday"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,byday:0
+msgid "By day"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+#: field:res.partner,medical_record_ids:0
+msgid "Medical Record"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,id:0
+msgid "ID"
+msgstr ""
+
+#. module: clinic
+#: model:ir.model,name:clinic.model_calendar_attendee
+msgid "Attendee information"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,sequence:0
+msgid "Sequence"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+#: field:res.partner,assigned_medic_id:0
+msgid "Assigned Medic"
+msgstr ""
+
+#. module: clinic
+#: help:clinic.meeting,alarm_id:0
+msgid "Set an alarm at this time, before the event occurs"
+msgstr ""
+
+#. module: clinic
+#: view:res.partner:0
+msgid "Patient Partners"
+msgstr ""
+
+#. module: clinic
+#: view:clinic.meeting:0
+msgid "Accept"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,interval:0
+msgid "Repeat Every"
+msgstr ""
+
+#. module: clinic
+#: model:res.groups,name:clinic.group_manager
+msgid "Manager"
+msgstr ""
+
+#. module: clinic
+#: model:ir.actions.act_window,name:clinic.action_clinic_room_room
+#: model:ir.ui.menu,name:clinic.menu_room
+msgid "Rooms"
+msgstr ""
+
+#. module: clinic
+#: field:clinic.meeting,duration:0
+msgid "Duration"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,week_list:0
+msgid "Saturday"
+msgstr ""
+
+#. module: clinic
+#: selection:clinic.meeting,byday:0
+msgid "Fifth"
+msgstr ""
+

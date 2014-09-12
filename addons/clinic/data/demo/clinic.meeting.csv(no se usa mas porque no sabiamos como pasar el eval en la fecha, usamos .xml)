@@ -1,0 +1,4 @@
+id,patient_id/id,user_id/id,name,partner_ids,date,duration,date_deadline,categ_ids,room_id/id,description
+clinic_meeting_1,res_partner_1,medico_1,asd,,time.strftime('%Y-%m-10 11:30:00'),0.5,time.strftime('%Y-%m-10 11:30:00'),,clinic_room_1,
+clinic_meeting_2,res_partner_2,medico_1,asd,,time.strftime('%Y-%m-10 11:30:00'),0.5,time.strftime('%Y-%m-10 11:30:00'),,clinic_room_1,
+clinic_meeting_3,res_partner_3,medico_1,asd,,time.strftime('%Y-%m-10 11:30:00'),0.5,time.strftime('%Y-%m-10 11:30:00'),,clinic_room_1,

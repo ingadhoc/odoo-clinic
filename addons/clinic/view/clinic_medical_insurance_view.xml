@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+##############################################################################
+#
+#    Clinic
+#    Copyright (C) 2013 Grupo ADHOC
+#    No email
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+-->
+<!-- clinic.medical_insurance -->
+<!-- clinic.medical_insurance -->
+<!-- clinic.medical_insurance -->
+<openerp>
+    <data>
+
+        <!-- SEARCH VIEW -->
+        <record id="view_clinic_medical_insurance_filter" model="ir.ui.view">
+            <field name="name">clinic.medical_insurance.select</field>
+            <field name="model">clinic.medical_insurance</field>
+            <field name="arch" type="xml">
+                <search string="medical_insurance" version="7.0">
+                    <group string="By Attribute">
+                    <field name="name" string="Name"
+                            />
+                    </group>
+                    <group string="By object">
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- FORMVIEW -->
+        <record id="view_clinic_medical_insurance_form" model="ir.ui.view">
+            <field name="name">clinic.medical_insurance.form</field>
+            <field name="model">clinic.medical_insurance</field>
+            <field name="arch" type="xml">
+                <form string="medical_insurance" version="7.0">
+                    <header>
+                    </header>
+                    <sheet string="medical_insurance">
+                     <group>
+                        <field name="name"
+                            />
+                     </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- TREEVIEW -->
+
+        <record id="view_clinic_medical_insurance_tree" model="ir.ui.view">
+            <field name="name">clinic.medical_insurance.tree</field>
+            <field name="model">clinic.medical_insurance</field>
+            <field name="arch" type="xml">
+                <tree string="medical_insurance"
+                    >
+                    <field name="name"
+                        />
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Action and Menu -->
+        
+        <record id="action_clinic_medical_insurance_medical_insurance" model="ir.actions.act_window">
+            <field name="name">Medical Insurance</field>
+            <field name="res_model">clinic.medical_insurance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_clinic_medical_insurance_tree"/>
+            <field name="search_view_id" ref="view_clinic_medical_insurance_filter"/>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem
+            id="menu_medical_insurance"
+            sequence="10"
+            action="action_clinic_medical_insurance_medical_insurance"
+            parent="menu_configuration"
+            />
+
+    </data>
+</openerp>
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4
+     -->

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+##############################################################################
+#
+#    Clinic
+#    Copyright (C) 2013 Grupo ADHOC
+#    No email
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+-->
+<!-- clinic.meeting -->
+<!-- crm.meeting -->
+<!-- crm.meeting -->
+<openerp>
+    <data>
+
+        <!-- FORMVIEW -->
+    <record model="ir.ui.view" id="view_clinic_meeting_form">
+        <field name="name">Clinic - Meetings Form</field>
+        <field name="model">clinic.meeting</field>
+        <field name="arch" type="xml">
+            <form string="Meetings" version="7.0">
+                <field name="state" invisible="True"/>
+                <sheet>
+                    <!-- <field name="image" widget='image' readonly="True" class="oe_left oe_avatar" options='{"size": [90, 90]}'/> -->
+                    <field name="image_medium" widget='image' class="oe_left oe_avatar" options='{"size": [90, 90]}'/>                    
+                    <div class="oe_title">
+                      
+                        <!-- Patient -->
+                        <div class="oe_edit_only">
+                            <label for="patient_id" class="oe_edit_only"/>
+                        </div>
+                        <h2>
+                            <!-- La opcion quic_create=False imagine que desabilitaba el pop up pero no me anda -->
+                            <field name="patient_id" options="{'no_quick_create': True}" quick_create="False" on_change="onchange_patient(patient_id)"/>
+                        </h2>
+
+                        <!-- Responsible -->
+                        <div class="oe_edit_only">
+                            <label for="user_id"/>
+                        </div>                        
+                        <h2>
+                            <field name="user_id" options="{'create': false}" />
+                        </h2>                        
+                        
+                        <!-- Assitants -->
+                        <label for="user_ids" class="oe_edit_only"/>
+                        <!-- <label for="partner_ids" class="oe_edit_only"/> -->
+                        <h2>
+                            <field name="user_ids" widget="many2many_tags" domain="[('is_medic','=',True)]"/> 
+                                <!-- <field name="partner_ids" widget="many2many_tags"
+                                context="{'force_email':True}" domain="[('is_medic','=',True)]"
+                                on_change="onchange_partner_ids(partner_ids)"/>                    -->
+                        </h2>
+                    </div>
+                    <notebook>
+                    <page string="Meeting Details">
+                        <group>
+                            <group>
+                                <field name="date" string="Starting at"
+                                    on_change="onchange_dates(date, duration, False, allday)"/>
+                                <label for="duration"/>
+                                <div>
+                                    <!-- Por ahora no lo usamos, ver  "obs duration list en clinic_meeting.py" -->
+                                    <!-- <field name="meeting_duration_id" widget="selection" on_change="onchange_meeting_duration_id(meeting_duration_id,date,duration,False,allday)"/> -->
+                                    <field name="duration" widget="float_time"
+                                        on_change="onchange_dates(date,duration,False,allday)"
+                                        class="oe_inline" attrs="{'invisible': [('allday','=',True)]}"/>
+                                    <label string="hours" attrs="{'invisible': [('allday','=',True)]}"/>
+                                    (<field name="allday" on_change="onchange_dates(date,False,False,allday)" class="oe_inline"/>
+                                    <label for="allday" string="All Day?"/>)
+                                </div>
+                                <field name="date_deadline" groups="base.group_no_one"
+                                    attrs="{'invisible': ['|', ('allday','=',True), ('duration','&lt;', 24)]}"
+                                    on_change="onchange_dates(date,False,date_deadline)"/>
+                            </group>
+                            <group>
+                                <field name="room_id"/>
+                                <field name="mail_sent" groups="base.group_no_one"/>
+                            </group>
+
+                        </group>
+                        <!-- <label for="name"/> -->
+                        <!-- <field name="name"/> -->
+                        <!-- Saco description y pongo name porque el campo name es el que se completa desde la vista calendario al crear un nuevo envento y no vi que pueda pasarse como parametro -->
+                        <label for="categ_ids"/>
+                        <field name="categ_ids" widget="many2many_tags"/>
+                        <label for="description"/>
+                        <field name="description"/>
+                    </page>
+                    <page string="Options" groups="base.group_no_one">
+                        <group>
+                            <group col="1">
+                                <group>
+                                    <field name="recurrency"/>
+                                </group>
+                                <group attrs="{'invisible': [('recurrency','=',False)]}">
+                                    <label for="interval"/>
+                                    <div>
+                                        <field name="interval" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
+                                        <field name="rrule_type" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
+                                    </div>
+                                    <label string="Until" for="end_type"/>
+                                    <div>
+                                        <field name="end_type" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
+                                        <field name="count" attrs="{'invisible': [('end_type', '!=', 'count')], 'required': [('recurrency','==',True)]}" class="oe_inline"/>
+                                        <field name="end_date" attrs="{'invisible': [('end_type', '!=', 'end_date')], 'required': [('end_type', '=', 'end_date')]}" class="oe_inline"/>
+                                    </div>
+                                    <label string="Select Weekdays" attrs="{'invisible' :[('rrule_type','not in', ['weekly'])]}"/>
+                                    <group col="2" colspan="1" name="weekdays" attrs="{'invisible' :[('rrule_type','not in', ['weekly'])]}">
+                                        <field name="mo"/>
+                                        <field name="tu"/>
+                                        <field name="we"/>
+                                        <field name="th"/>
+                                        <field name="fr"/>
+                                        <field name="sa"/>
+                                        <field name="su"/>
+                                    </group>
+
+                                    <label string="Day of Month"
+                                        attrs="{'invisible': [('rrule_type','!=','monthly')]}"/>
+
+                                    <div attrs="{'invisible': [('rrule_type','!=','monthly')]}">
+                                        <field name="select1"/>
+                                        <field name="day"
+                                            attrs="{'required': [('select1','=','date'), ('rrule_type','=','monthly')],
+                                                'invisible': [('select1','=','day')]}"/>
+                                        <field name="byday" string="The"
+                                            attrs="{'required': [('select1','=','day'), ('rrule_type','=','monthly')], 'invisible': [('select1','=','date')]}"/>
+                                        <field name="week_list" nolabel="1"
+                                            attrs="{'required': [('select1','=','day'), ('rrule_type','=','monthly')], 'invisible': [('select1','=','date')]}"/>
+                                    </div>
+
+                                </group>
+                            </group>
+                            <group>
+                                <field name="alarm_id" widget="selection" groups="base.group_no_one"/>
+                                <field name="class"/>
+                                <field name="show_as"/>
+                                <field name="rrule" invisible="1" readonly="1"/>
+                                <field name="recurrent_id_date" invisible="1"/>
+                                <field name="recurrent_id" invisible="1"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Invitations" groups="base.group_no_one">
+                        <field name="attendee_ids" widget="one2many" mode="tree">
+                            <tree string="Invitation details" editable="top">
+                                <field name="partner_id" on_change="onchange_partner_id(partner_id)"/>
+                                <field name="email" string="Mail To"/>
+                                <field name="state"/>
+                                <button name="do_tentative"
+                                    states="needs-action,declined,accepted"
+                                    string="Uncertain" type="object"
+                                    icon="terp-crm"/>
+                                <button name="do_accept" string="Accept"
+                                    states="needs-action,tentative,declined"
+                                    type="object" icon="gtk-apply"/>
+                                <button name="do_decline" string="Decline"
+                                    states="needs-action,tentative,accepted"
+                                    type="object" icon="gtk-cancel"/>
+                            </tree>
+                            <form string="Invitation details" version="7.0">
+                                <header>
+                                    <button name="do_tentative" type="object"
+                                        states="needs-action,declined,accepted"
+                                        string="Uncertain"/>
+                                    <button name="do_accept" type="object"
+                                        states="needs-action,tentative,declined"
+                                        string="Accept"/>
+                                    <button name="do_decline" type="object"
+                                        states="needs-action,tentative,accepted"
+                                        string="Decline"/>
+                                    <field name="state" widget="statusbar" statusbar_visible="draft,open,done"/>
+                                </header>
+                                <group>
+                                    <group>
+                                        <field name="email"/>
+                                        <field name="rsvp"/>
+                                        <field name="cutype"/>
+                                        <field name="role"/>
+                                    </group>
+                                    <group>
+                                        <field name="partner_id"/>
+                                        <field name="user_id"/>
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                    </notebook>
+                
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread" placeholder="Share a message..."/>
+                </div>                
+            </form>
+        </field>
+    </record>
+
+    <!-- Clinic Meeting Tree View  -->
+
+    <record model="ir.ui.view" id="view_clinic_meeting_tree">
+        <field name="name">Clinic - Meetings Tree</field>
+        <field name="model">clinic.meeting</field>
+        <field name="arch" type="xml">
+            <tree string="Meetings" fonts="bold:message_unread==True">
+                <field name="user_id"/>
+                <field name="patient_id"/>                
+                <field name="date"/>
+                <field name="state" invisible="True"/>
+                <field name="duration"/>
+                <field name="message_unread" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Clinic Meeting Calendar -->
+
+    <record model="ir.ui.view" id="view_clinic_meeting_calendar">
+        <field name="name">Clinic - Meetings Calendar</field>
+        <field name="model">clinic.meeting</field>
+        <field name="priority" eval="2"/>
+        <field name="arch" type="xml">
+            <calendar string="Meetings" mode="week" date_start="date" color="user_id" date_stop="date_deadline" date_delay="duration" day_length="8">
+                <field name="patient_id"/>
+                <field name="user_ids"/>
+            </calendar>
+        </field>
+    </record>
+
+
+    <!-- Clinic Meeting Search View  -->
+
+    <record id="view_clinic_meeting_search" model="ir.ui.view">
+        <field name="name">Clinic - Meetings Search</field>
+        <field name="model">clinic.meeting</field>
+        <field name="arch" type="xml">
+            <search string="Search Meetings">
+                <field name="patient_id"/>
+                <field name="user_ids"/>
+                <!-- <field name="partner_ids"/> -->
+                <field name="room_id"/>
+                <field name="categ_ids"/>
+                <field name="user_id"/>
+                <separator/>
+                <group expand="0" string="Group By...">
+                    <filter string="Patient" context="{'group_by' : 'patient_id'}"/>
+                    <filter string="Responsible Medic" context="{'group_by': 'user_id'}"/>
+                    <filter string="Room" context="{'group_by' : 'room_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Clinic meeting action -->
+
+    <record id="action_clinic_meeting" model="ir.actions.act_window">
+        <field name="name">Clinic Meetings</field>
+        <field name="res_model">clinic.meeting</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <!-- <field name="view_mode">calendar,tree,form</field> -->
+        <field name="view_id" ref="view_clinic_meeting_calendar"/>
+        <field name="search_view_id" ref="view_clinic_meeting_search"/>
+        <field name="context">{"calendar_default_user_id": uid}</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to schedule a new meeting.
+          </p><p>
+            The calendar is shared between employees and fully integrated with
+            other applications.
+          </p>
+        </field>
+    </record>   
+
+    <!-- Menu Clinic Meeting  -->
+    <menuitem
+        name="Calendar"
+        id="menu_calendar"
+        sequence="10"
+        action="action_clinic_meeting"
+        parent="menu_clinic_organizer"
+        />          
+  
+    </data>
+</openerp>

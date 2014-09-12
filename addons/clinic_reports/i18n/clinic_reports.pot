@@ -1,0 +1,94 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* clinic_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.saas~2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-11 16:12+0000\n"
+"PO-Revision-Date: 2013-10-11 16:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clinic_reports
+#: model:ir.model,name:clinic_reports.model_clinic_meeting_daily_agenda_wizard
+msgid "clinic_meeting_daily_agenda_wizard"
+msgstr ""
+
+#. module: clinic_reports
+#: field:res.users,daily_schedule_mail:0
+msgid "Receive Daily Agenda"
+msgstr ""
+
+#. module: clinic_reports
+#: model:ir.actions.server,name:clinic_reports.ir_actions_server_daily_agenda_email
+msgid "Meeting Daily Agenda Server Action"
+msgstr ""
+
+#. module: clinic_reports
+#: model:ir.model,name:clinic_reports.model_res_users
+msgid "Users"
+msgstr ""
+
+#. module: clinic_reports
+#: model:ir.actions.report.xml,name:clinic_reports.clinic_meeting_daily_agenda
+msgid "Clinic Meeting Daily Agenda"
+msgstr ""
+
+#. module: clinic_reports
+#: view:clinic_meeting_daily_agenda_wizard:0
+msgid "Print"
+msgstr ""
+
+#. module: clinic_reports
+#: selection:res.users,daily_schedule_mail:0
+msgid "All Medics Agenda"
+msgstr ""
+
+#. module: clinic_reports
+#: selection:res.users,daily_schedule_mail:0
+msgid "Never"
+msgstr ""
+
+#. module: clinic_reports
+#: model:ir.ui.menu,name:clinic_reports.menu_clinic_reports
+msgid "Reports"
+msgstr ""
+
+#. module: clinic_reports
+#: field:clinic_meeting_daily_agenda_wizard,date:0
+msgid "Date"
+msgstr ""
+
+#. module: clinic_reports
+#: selection:res.users,daily_schedule_mail:0
+msgid "My Agenda"
+msgstr ""
+
+#. module: clinic_reports
+#: view:clinic_meeting_daily_agenda_wizard:0
+msgid "Cancel"
+msgstr ""
+
+#. module: clinic_reports
+#: view:clinic_meeting_daily_agenda_wizard:0
+#: model:ir.actions.act_window,name:clinic_reports.action_clinic_meeting_daily_agenda_wizard
+#: model:ir.ui.menu,name:clinic_reports.menu_clinic_meeting_daily_agenda_wizard
+msgid "Daily agenda"
+msgstr ""
+
+#. module: clinic_reports
+#: model:ir.model,name:clinic_reports.model_clinic_meeting_daily_schedule_wizard
+msgid "clinic_meeting_daily_schedule_wizard"
+msgstr ""
+
+#. module: clinic_reports
+#: field:clinic_meeting_daily_agenda_wizard,user_ids:0
+msgid "Medics"
+msgstr ""
+
