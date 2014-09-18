@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="base.user_root" model="res.users">
+            <field name="tz">America/Argentina/Buenos_Aires</field>
+        </record>
+    </data>
+</openerp>

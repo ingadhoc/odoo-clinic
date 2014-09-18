@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="ir_mail_server_clinic_adhoc" model="ir.mail_server">
+            <field name="name">Clinic ADHOC</field>
+            <field name="smtp_host">smtp.gmail.com</field>
+            <field name="smtp_user">clinicadhoc@grupoadhoc.com.ar</field>
+            <field name="smtp_pass">clinic123321</field>
+            <field name="smtp_encryption">ssl</field>
+            <field eval="465" name="smtp_port"/>
+            <field eval="5" name="sequence"/>
+        </record>
+    </data>
+</openerp>
