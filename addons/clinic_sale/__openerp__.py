@@ -3,7 +3,11 @@
     'author': 'Ingenieria ADHOC',
     'category': 'Clinic',
     'demo_xml': [],
-    'depends': ['clinic', 'sale_dummy_confirmation'],
+    'depends': [
+        'clinic',
+        'sale_dummy_confirmation',
+        'l10n_ar_aeroo_sale',
+        ],
     'description': """
 Clinic Sales
 =============
