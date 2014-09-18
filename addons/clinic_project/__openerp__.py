@@ -25,7 +25,16 @@
     'author': 'Sistemas ADHOC',
     'category': 'Clinic',
     'demo_xml': [],
-    'depends': ['clinic', 'clinic_reports','im', 'web_nocreatedb', 'disable_openerp_online', 'cron_run_manually', 'web_clinic_cust', 'document',],
+    'depends': [
+        'clinic',
+        'clinic_reports',
+        'im',
+        'web_nocreatedb',
+        'disable_openerp_online',
+        'cron_run_manually',
+        'web_clinic_cust',
+        'document',
+        ],
     # 'depends': ['clinic', 'clinic_reports','im', 'web_nocreatedb','web_m2o_enhanced', 'disable_openerp_online'],
     'description': """
 Clinic Project
