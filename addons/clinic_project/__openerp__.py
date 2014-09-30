@@ -34,7 +34,6 @@
         'cron_run_manually',
         'web_clinic_cust',
         'document',
-        'clinic_sale',
         ],
     # 'depends': ['clinic', 'clinic_reports','im', 'web_nocreatedb','web_m2o_enhanced', 'disable_openerp_online'],
     'description': """
