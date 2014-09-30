@@ -6,7 +6,7 @@
     'depends': [
         'clinic',
         'sale_dummy_confirmation',
-        'l10n_ar_aeroo_sale',
+        'l10n_ar_reports_samples',
         ],
     'description': """
 Clinic Sales

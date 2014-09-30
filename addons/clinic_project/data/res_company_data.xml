@@ -3,7 +3,7 @@
     <data noupdate="0">
 
         <record id="base.main_company" model="res.company">
-            <field name="sale_order_dummy_confirmation" eval="True"/>
+            <field name="sale_order_dummy_confirm" eval="True"/>
         </record>
     </data>
 </openerp>

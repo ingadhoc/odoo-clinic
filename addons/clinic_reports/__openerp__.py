@@ -25,7 +25,10 @@
     'author': 'Sistemas ADHOC',
     'category': 'Clinic',
     'demo_xml': [],
-    'depends': ['clinic','report_webkit'],
+    'depends': [
+        'clinic',
+        'report_webkit'
+        ],
     # 'depends': ['clinic','report_aeroo'],
     # 'depends': ['clinic','report_aeroo','report_aeroo_ooo'],
     'description': """

@@ -81,6 +81,7 @@ If reports do not contain headers, install the static version of wkhtmltopdf fro
             'security/ir.model.access.csv',
             'view/help_view.xml',
             'data/res_company_data.xml',
+            'data/res_company_data.xml',
             #regla agregada para permitir que se borren documentos
                   ],
     'version': '1.1',
