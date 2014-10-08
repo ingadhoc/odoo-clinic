@@ -1,29 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-##############################################################################
-#
-#    Clinic Module
-#    Copyright (C) 2013 Grupo ADHOC
-#    No email
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
--->
-<!-- clinic.patient -->
-<!-- res.partner -->
-<!-- res.partner -->
 <openerp>
     <data>
 
@@ -38,7 +13,6 @@
                     <filter name="is_patient" domain="[('is_patient','=',1)]" help="Patient Partners"/>    
                </filter>                
                <filter name="customer" position="replace"/>   
-<!--               <filter name="supplier" position="replace"/>                        -->
             </field>
         </record>
 
@@ -145,7 +119,7 @@
                     <page string="Meetings" attrs="{'invisible': [('is_patient', '=', False)]}">
                         <field name="meeting_ids" readonly="1">
                             <tree>
-                                <field name="date"/>
+                                <!-- <field name="date"/> -->
                                 <field name="categ_ids"/>
                                 <!-- <field name="user_id"/> -->                               
                                 <field name="duration"/>
@@ -165,8 +139,5 @@
             action="contacts.action_contacts"
             parent="menu_clinic_organizer"
             />
-
-
-
     </data>
 </openerp>

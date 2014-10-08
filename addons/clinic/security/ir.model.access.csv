@@ -7,7 +7,3 @@ access_clinic_medical_record_user,clinic.medical_record.user,model_clinic_medica
 access_clinic_medical_record_manager,clinic.medical_record.manager,model_clinic_medical_record,group_manager,1,1,1,1
 access_clinic_room_user,clinic.room.user,model_clinic_room,group_user,1,1,1,1
 access_clinic_room_manager,clinic.room.manager,model_clinic_room,group_manager,1,1,1,1
-access_clinic_meeting_user,clinic.meeting.user,model_clinic_meeting,group_user,1,1,1,1
-access_clinic_meeting_manager,clinic.meeting.manager,model_clinic_meeting,group_manager,1,1,1,1
-access_clinic_meeting_type_user,clinic.meeting.type.user,model_clinic_meeting_type,group_user,1,1,1,1
-access_clinic_meeting_type_manager,clinic.meeting.type.manager,model_clinic_meeting_type,group_manager,1,1,1,1

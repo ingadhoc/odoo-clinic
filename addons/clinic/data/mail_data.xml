@@ -97,7 +97,7 @@
         <!-- Email template-->
         <record id="meeting_invitation" model="email.template">
             <field name="name">Clinic Meeting Invitation</field>
-            <field name="model_id" ref="base_calendar.model_calendar_attendee"/>
+            <field name="model_id" ref="calendar.model_calendar_attendee"/>
             <field name="email_from"><![CDATA[${user.company_id.name} <noreply@clinicadhoc.com.ar>]]></field>
             <!-- <field name="email_from"><![CDATA[${user.company_id.name} <${user.company_id.email or user.email}>]]></field> -->
             <field name="email_to">${object.email}</field>

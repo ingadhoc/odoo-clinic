@@ -9,7 +9,7 @@
             <field name="model">res.users</field>
             <field name="inherit_id" ref="mail.view_users_form_simple_modif_mail"/>
             <field name="arch" type="xml">
-                <field name="notification_email_send" position="after">
+                <field name="signature" position="before">
                     <field name="daily_schedule_mail" readonly="0"/>   
                 </field>
             </field>
@@ -19,11 +19,10 @@
         <record id="view_users_form_mail_clinic" model="ir.ui.view">
             <field name="name">res.users.form.mail.clinic</field>
             <field name="model">res.users</field>
-            <field name="inherit_id" ref="mail.view_users_form_mail"/>
+            <field name="inherit_id" ref="base.view_users_form"/>
             <field name="arch" type="xml">
-                <field name="notification_email_send" position="after">
-                    <field name="daily_schedule_mail" readonly="0"/>                
-                    <!-- <button name="cron_user_daily_agenda" type="object" string="mail"/> -->
+                <field name="signature" position="before">
+                    <field name="daily_schedule_mail" readonly="0"/>   
                 </field>
             </field>
         </record>

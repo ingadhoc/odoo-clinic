@@ -2,9 +2,7 @@
 <openerp>
     <data noupdate="1">
         <record id="report_webkit.ir_property_webkitheaderdefault0" model="ir.property">
-            <!-- <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/> -->
-            <!-- <field eval="&quot;&quot;&quot;webkit_header_default&quot;&quot;&quot;" name="name"/>
- -->            <field eval="&quot;&quot;&quot;ir.header_webkit,2&quot;&quot;&quot;" name="value"/>
+           <field eval="&quot;&quot;&quot;ir.header_webkit,2&quot;&quot;&quot;" name="value"/>
         </record>
 
         <record id="ir_header_webkit_basesample1" model="ir.header_webkit">

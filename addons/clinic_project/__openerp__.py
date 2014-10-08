@@ -1,38 +1,15 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Clinic
-#    Copyright (C) 2013 Grupo ADHOC
-#    No email
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-
-
 {   'active': False,
     'author': 'Sistemas ADHOC',
     'category': 'Clinic',
-    'demo_xml': [],
     'depends': [
         'clinic',
         'clinic_reports',
-        'im',
-        'web_nocreatedb',
+        'im_chat',
+        # 'web_nocreatedb',
         'disable_openerp_online',
-        'cron_run_manually',
-        'web_clinic_cust',
+        # 'cron_run_manually',
+        # 'web_clinic_cust',
         'document',
         ],
     # 'depends': ['clinic', 'clinic_reports','im', 'web_nocreatedb','web_m2o_enhanced', 'disable_openerp_online'],
@@ -66,14 +43,13 @@ If reports do not contain headers, install the static version of wkhtmltopdf fro
 
 
 """,
-    'init_xml': [],
     'installable': True,
     'license': 'AGPL-3',
     'name': 'Clinic Project',
     'test': [],
     'demo': [
     ],
-    'update_xml': [
+    'data': [
             'data/res_partner_image_data.xml',  
             'data/mail_data.xml',
             'data/res_users_data.xml',

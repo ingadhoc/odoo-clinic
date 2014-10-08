@@ -2,24 +2,22 @@
 {'active': False,
     'author': 'Ingenieria ADHOC',
     'category': 'Clinic',
-    'demo_xml': [],
     'depends': [
         'clinic',
         'sale_dummy_confirmation',
-        'l10n_ar_reports_samples',
+        'l10n_ar_aeroo_sale',
         ],
     'description': """
 Clinic Sales
 =============
 """,
-    'init_xml': [],
     'installable': True,
     'license': 'AGPL-3',
     'name': 'Clinic Sale',
     'test': [],
     'demo': [
     ],
-    'update_xml': [
+    'data': [
         'res_partner_view.xml',
     ],
     'version': '1.1',
