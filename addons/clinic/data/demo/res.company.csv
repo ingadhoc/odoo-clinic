@@ -1,2 +1,0 @@
-id,name,parent_id/id,street,city,state_id/id,zip,country_id/id,rml_header1,website,phone,fax,email,vat,company_registry,currency_id,logo
-base.main_company,Clinic ADHOC,,Calle falsa 123,Rosario,l10n_ar_states.S,2000,base.ar,Clinic ADHOC,www.clinicadhoc.com.ar,+54 341 4211292,,contacto@clinicaadhoc.com.ar,,,ARS,

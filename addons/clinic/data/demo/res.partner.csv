@@ -1,4 +1,0 @@
-id,name,medical_insurance_id/id,insurance_number,assigned_medic_id/id,mobile,phone,email,street,street2,city,state_id/id,zip,country_id/id,facebook,skype,birthday,dni
-res_partner_1,Pablo Garcia,medical_insurance_1,1543 2548 215,medico_1,3413123456,0341 4254354,pablogarcia@mimail.com,Calle falsa 123,,Rosario,l10n_ar_states.S,2000,base.ar,,,,
-res_partner_2,Juan Ignacion Perez,medical_insurance_2,2165432/2,medico_1,2615432154,0261 4241623,juani@elmejor.com,Otra calle 321,,Cordoba,l10n_ar_states.C,5000,base.ar,,,,
-res_partner_3,Romina Casas,medical_insurance_1,123456-124,medico_2,+54 11 312143574,011 32145614,ramomina@undominio.com.ar,Nose donde vivo 1234,,Pilar,l10n_ar_states.B,1000,base.ar,,,,

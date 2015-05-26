@@ -1,9 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_clinic_medical_insurance_user,clinic.medical_insurance.user,model_clinic_medical_insurance,group_user,1,1,1,1
-access_clinic_medical_insurance_manager,clinic.medical_insurance.manager,model_clinic_medical_insurance,group_manager,1,1,1,1
-access_res_partner_user,res.partner.user,model_res_partner,group_user,1,1,1,1
-access_res_partner_manager,res.partner.manager,model_res_partner,group_manager,1,1,1,1
-access_clinic_medical_record_user,clinic.medical_record.user,model_clinic_medical_record,group_user,1,1,1,1
-access_clinic_medical_record_manager,clinic.medical_record.manager,model_clinic_medical_record,group_manager,1,1,1,1
-access_clinic_room_user,clinic.room.user,model_clinic_room,group_user,1,1,1,1
-access_clinic_room_manager,clinic.room.manager,model_clinic_room,group_manager,1,1,1,1
