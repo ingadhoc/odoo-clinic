@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- SEARCHVIEW -->
+        <record id="view_contact_filter" model="ir.ui.view">
+            <field name="name">contact.partner.select</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+               <filter name="customer" position="before">               
+                    <filter name="is_medic" domain="[('is_medic','=',1)]" help="Medic Partners"/>   
+                    <filter name="is_patient" domain="[('is_patient','=',1)]" help="Patient Partners"/>    
+               </filter>                
+               <filter name="customer" position="replace"/>   
+            </field>
+        </record>
+
+        <!-- FORMVIEW -->
+        <record id="view_res_partner_clinic_form" model="ir.ui.view">
+            <field name="name">contact.partner.clinic.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"></field>
+            <field name="arch" type="xml">
+
+<!-- Para utilizar cuando usemos el modulo para cargar imagen desde webcam -->
+<!--                 <field name="image" position="attributes">
+                    <attribute name="widget">webcam</attribute>
+                </field>
+ -->
+            <!-- Agregamos medico asignado -->
+                <field name="category_id" position="after">
+                    <h3><field name="assigned_medic_id" attrs="{'invisible': [('is_patient', '=', False)],'required': [('is_patient', '=', True)]}" placeholder="Assigned Medic"/></h3>
+                </field>
+            
+            <!-- Modificamos toda la vista de address y demas, agregamos algunos campos -->
+                <group position="replace">
+                    <group>
+                        <group>
+                            <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
+                            <field name="mobile"/>
+                            <field name="email" widget="email"/>
+                            <label for="medical_insurance_id" string="Medical Insurence"/>
+                                <div attrs="{'invisible': [('is_patient', '=', False)]}">                            
+                                <field name="medical_insurance_id" attrs="{'required': [('is_patient', '=', True)]}" placeholder="Name..."/>
+                                <field name="insurance_number" placeholder="Number..."/>
+                            </div>
+                            <field name="dni"/>  
+                            <field name="birthday"/>                          
+                        </group>
+                        <group>
+                            <field name="facebook"/>
+                            <field name="skype"/>                           
+                            <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
+                            <label for="type" attrs="{'invisible': [('parent_id','=', False)]}"/>
+                            <div attrs="{'invisible': [('parent_id','=', False)]}" name="div_type">
+                                <field class="oe_inline"
+                                    name="type"/>
+                            </div>
+
+                            <label for="street" string="Address"/>
+                            <div>
+                                <field name="use_parent_address" class="oe_edit_only oe_inline"
+                                       on_change="onchange_address(use_parent_address, parent_id)"
+                                       attrs="{'invisible': [('parent_id','=', False),('use_parent_address','=',False)]}"/>
+                                <label for="use_parent_address" class="oe_edit_only" attrs="{'invisible': [('parent_id','=', False),('use_parent_address','=',False)]}"/>
+                                <button name="open_parent" type="object" string="(edit company address)" class="oe_link oe_edit_only"
+                                        attrs="{'invisible': ['|',('parent_id','=', False),('use_parent_address','=',False)]}"/>
+                                <field name="street" placeholder="Street..."  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                <div class="address_format">
+                                    <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                    <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                    <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                </div>
+                                <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                            </div>
+                            <!-- campos que no vamos a usar -->
+<!--                             <field name="function" placeholder="e.g. Sales Director"
+                                attrs="{'invisible': [('is_company','=', True)]}"/>
+                            <field name="fax"/>
+                            <field name="title" domain="[('domain', '=', 'contact')]"
+                                options='{"no_open": True}' attrs="{'invisible': [('is_company','=', True)]}" /> -->
+                        </group>
+                    </group>
+                </group>
+
+                <div class="oe_edit_only" position="attributes">
+                    <attribute name="groups">"base.group_no_one"</attribute>
+                </div>
+                <field name="parent_id" position="attributes">
+                    <attribute name="groups">"base.group_no_one"</attribute>
+                </field>
+
+                <page string="Sales &amp; Purchases" position="attributes">
+                    <attribute name="groups">base.group_no_one</attribute>
+                </page>
+
+                <xpath expr="//div[@name='buttons']" position="after">
+                    <div class="oe_right oe_button_box" name="partner_type">   
+
+                        <label for="is_medic"/>
+                        <field name="is_medic"/>
+                        
+                        <label for="is_patient"/>
+                        <field name="is_patient"/>   
+                    </div>
+                </xpath>          
+
+                <field name="comment" position="replace"/>
+                <page string="Internal Notes" position="inside">
+                    <field name="html_comment" placeholder="Put an internal note..."/>    
+                </page>
+                <page string="Internal Notes" position="before">
+                    <page string="Medical Record" attrs="{'invisible': [('is_patient', '=', False)]}">
+                        <field name="medical_record_ids" colspan="4" nolabel="1"/>
+                    </page>
+
+                    <page string="Meetings" attrs="{'invisible': [('is_patient', '=', False)]}">
+                        <field name="meeting_ids" readonly="1">
+                            <tree>
+                                <!-- <field name="date"/> -->
+                                <field name="categ_ids"/>
+                                <!-- <field name="user_id"/> -->                               
+                                <field name="duration"/>
+                                <field name="state" invisible="1"/>               
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+  
+            </field>
+        </record>
+
+        <menuitem
+            name="Contacts"
+            id="menu_contacts"
+            sequence="20"
+            action="contacts.action_contacts"
+            parent="menu_clinic_organizer"
+            />
+    </data>
+</openerp>

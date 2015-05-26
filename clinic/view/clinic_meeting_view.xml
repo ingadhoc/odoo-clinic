@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <!-- CALENDARVIEW -->
+    <record model="ir.ui.view" id="view_calendar_event_calendar">
+        <field name="name">Clinic - Meetings Form</field>
+        <field name="model">calendar.event</field>        
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+        <field name="arch" type="xml">
+            <calendar position="attributes">
+                <!-- Other attributes 
+                color
+                date_start
+                date_stop
+                date_delay
+                attendee="partner_ids"
+                avatar_model="res.partner"
+                use_contacts="True" 
+                -->
+                <attribute name="event_open_popup">%(calendar.view_calendar_event_form)d</attribute>
+                <attribute name="quick_add">False</attribute>
+                <attribute name="display">[patient_id]</attribute>
+            </calendar>
+            <calendar>
+                <field name="patient_id"/>
+            </calendar>
+            </field>
+        </record>
+
+        <!-- FORMVIEW -->
+    <record model="ir.ui.view" id="view_calendar_event_form">
+        <field name="name">Clinic - Meetings Form</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <!-- replace user, it will be reallocated -->
+            <field name="user_id" position="replace"/>
+
+            <div class="oe_title" position="before">                
+                <field name="image_medium" widget='image' class="oe_left oe_avatar" options='{"size": [90, 90]}'/>
+            </div>
+            <div class="oe_title" position="replace">
+                <div class="oe_title">
+
+                    <!-- Patient -->
+                    <div class="oe_edit_only">
+                        <label for="patient_id" class="oe_edit_only"/>
+                    </div>
+                    <h2>
+                        <field name="patient_id" required="1" options="{'no_quick_create': True}" quick_create="False"/>
+                    </h2>
+
+                    <!-- Responsible -->
+                    <div class="oe_edit_only">
+                        <label for="user_id"/>
+                    </div>                        
+                    <h2>
+                        <field name="user_id" options="{'no_create': True}"/>
+                    </h2>                        
+                    
+                    <!-- Assitants -->
+                    <label for="user_ids" class="oe_edit_only"/>
+                    <h2>
+                        <field name="user_ids" widget="many2many_tags"/> 
+                    </h2>
+                </div>
+            </div>
+            <field name="location" position="before">
+                <field name="room_id"/>
+                <field name="mail_sent" groups="base.group_no_one"/>
+            </field>
+        </field>
+    </record>
+  
+    </data>
+</openerp>

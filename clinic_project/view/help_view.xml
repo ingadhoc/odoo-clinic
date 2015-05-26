@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_url" id="help_external_link">
+            <field name="name">Help</field>
+            <field name="url">http://www.clinicadhoc.com.ar/tutoriales.html</field>
+            <field name="target">self</field>
+        </record>
+        
+        <menuitem name="Help" id="sagi_help" sequence="500"
+                  action="help_external_link"
+                  groups="base.group_user"/>
+                  
+    </data>
+</openerp>

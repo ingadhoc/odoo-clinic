@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report string="Clinic Meeting Daily Agenda"
+            id="clinic_meeting_daily_agenda"
+            model="res.users"
+            name="clinic_meeting_daily_agenda"
+            file="clinic_reports/report/daily_agenda/clinic_meeting_daily_agenda.mako"
+            report_type="webkit"/>
+            
+    </data>
+</openerp>

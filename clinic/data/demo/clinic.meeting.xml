@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+<!-- Me da error y no pude detectar porque, por eso lo deshabilito -->
+<!-- 
+        <record id="clinic_meeting_1" model="clinic.meeting">
+            <field name="patient_id" ref="res_partner_1"/>
+            <field name="user_id" ref="medico_1"/>
+            <field name="name"></field>
+            <field name="date" eval="time.strftime('%Y-%m-%d 11:30:00')"/>
+            <field name="date_deadline" eval="time.strftime('%Y-%m-%d 12:00:00')"/>
+            <field name="duration" eval="0.5"/>
+            <field name="categ_ids"></field>
+            <field name="room_id" ref="clinic_room_1"/>
+        </record>
+
+        <record id="clinic_meeting_1" model="clinic.meeting">
+            <field name="patient_id" ref="res_partner_1"/>
+            <field name="user_id" ref="medico_1"/>
+            <field name="name"></field>
+            <field name="date" eval="time.strftime('%Y-%m-%d 11:30:00')"/>
+            <field name="date_deadline" eval="time.strftime('%Y-%m-%d 12:00:00')"/>
+            <field name="duration" eval="0.5"/>
+            <field name="categ_ids"></field>
+            <field name="room_id" ref="clinic_room_1"/>
+        </record>
+
+        <record id="clinic_meeting_1" model="clinic.meeting">
+            <field name="patient_id" ref="res_partner_2"/>
+            <field name="user_id" ref="medico_2"/>
+            <field name="name"></field>
+            <field name="date" eval="time.strftime('%Y-%m-%d 12:00:00')"/>
+            <field name="date_deadline" eval="time.strftime('%Y-%m-%d 12:30:00')"/>
+            <field name="duration" eval="0.5"/>
+            <field name="categ_ids"></field>
+            <field name="room_id" ref="clinic_room_1"/>
+        </record>
+
+        <record id="clinic_meeting_4" model="clinic.meeting">
+            <field name="patient_id" ref="res_partner_3"/>
+            <field name="user_id" ref="medico_1"/>
+            <field name="name"></field>
+            <field name="date" eval="time.strftime('%Y-%m-25 12:00:00')"/>
+            <field name="date_deadline" eval="time.strftime('%Y-%m-25 12:30:00')"/>
+            <field name="duration" eval="1"/>
+            <field name="categ_ids"></field>
+            <field name="room_id" ref="clinic_room_1"/>
+        </record>   
+
+        <record id="clinic_meeting_5" model="clinic.meeting">
+            <field name="patient_id" ref="res_partner_1"/>
+            <field name="user_id" ref="medico_1"/>
+            <field name="name"></field>
+            <field name="date" eval="time.strftime('%Y-%m-25 11:30:00')"/>
+            <field name="date_deadline" eval="time.strftime('%Y-%m-25 12:00:00')"/>
+            <field name="duration" eval="0.5"/>
+            <field name="categ_ids"></field>
+            <field name="room_id" ref="clinic_room_1"/>
+        </record>  
+
+        <record id="clinic_meeting_6" model="clinic.meeting">
+            <field name="patient_id" ref="res_partner_1"/>
+            <field name="user_id" ref="medico_1"/>
+            <field name="name"></field>
+            <field name="date" eval="time.strftime('%Y-%m-26 10:30:00')"/>
+            <field name="date_deadline" eval="time.strftime('%Y-%m-26 11:30:00')"/>
+            <field name="duration" eval="1"/>
+            <field name="categ_ids"></field>
+            <field name="room_id" ref="clinic_room_1"/>
+        </record>        
+ -->
+    </data>
+</openerp>
