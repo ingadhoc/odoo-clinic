@@ -4,6 +4,13 @@ addons:
       - expect-dev  # provides unbuffer utility
       - python-lxml # because pip installation is slow
       - libcups2-dev # for aeroo
+      # odoo-argentina fe
+      - python-dev
+      - swig
+      - libffi-dev
+      - libssl-dev
+      - python-m2crypto
+      - python-httplib2
 
 language: python
 sudo: false
@@ -33,14 +40,21 @@ virtualenv:
 
 install:
   # aeroo reports
-  - git clone https://github.com/aeroo/aeroo_reports.git ${HOME}/aeroo_reports
+  - git clone https://github.com/aeroo/aeroo_reports.git -b 8.0 ${HOME}/aeroo_reports
   - pip install git+https://github.com/aeroo/aeroolib.git@master pycups==1.9.68
 
   # odoo addons adhoc
-  - git clone https://github.com/ingadhoc/odoo-addons.git ${HOME}/odoo-addons
+  - git clone https://github.com/ingadhoc/odoo-addons.git -b 8.0 ${HOME}/odoo-addons
 
   # odoo addons argentina
-  - git clone https://github.com/ingadhoc/odoo-argentina.git ${HOME}/odoo-argentina
+  - git clone https://github.com/ingadhoc/odoo-argentina.git -b 8.0 ${HOME}/odoo-argentina
+  - git clone https://github.com/ingadhoc/odoo-argentina.git -b 8.0 ${HOME}/odoo-argentina
+  - pip install geopy==0.95.1 BeautifulSoup
+  # odoo argentina fe
+  - pip install pyOpenSSL suds httplib2 pysimplesoap==1.08.8 m2crypto fpdf dbf Pillow
+  # install pyafipws after others dependencies because dependency erro
+  - pip install pyafipws
+
 
   # repository requirements
   - pip install -r requirements.txt
