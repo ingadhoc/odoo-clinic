@@ -48,7 +48,6 @@ install:
 
   # odoo addons argentina
   - git clone https://github.com/ingadhoc/odoo-argentina.git -b 8.0 ${HOME}/odoo-argentina
-  - git clone https://github.com/ingadhoc/odoo-argentina.git -b 8.0 ${HOME}/odoo-argentina
   - pip install geopy==0.95.1 BeautifulSoup
   # odoo argentina fe
   - pip install pyOpenSSL suds httplib2 pysimplesoap==1.08.8 m2crypto fpdf dbf Pillow
