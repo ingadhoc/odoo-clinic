@@ -18,6 +18,8 @@
                 avatar_model="res.partner"
                 use_contacts="True" 
                 -->
+                <attribute name="color">user_id</attribute>
+                <attribute name="use_contacts">False</attribute>
                 <attribute name="event_open_popup">%(calendar.view_calendar_event_form)d</attribute>
                 <attribute name="quick_add">False</attribute>
                 <attribute name="display">[patient_id]</attribute>
