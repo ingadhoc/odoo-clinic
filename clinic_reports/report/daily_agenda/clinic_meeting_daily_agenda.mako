@@ -80,7 +80,7 @@ border-bottom:none;
       <tbody>
         %for meeting in get_meetings(user.id, get_date(date)):
         <tr>
-          <td><center>${format_date(date_locale(meeting.date), "%H:%M")} - ${format_date(date_locale(meeting.date_deadline), "%H:%M")}</center></td>
+          <td><center>${format_date(date_locale(meeting.start), "%H:%M")} - ${format_date(date_locale(meeting.stop), "%H:%M")}</center></td>
           <td>${meeting.patient_id.name}</td>
           <td>${meeting.description or ""}</td>
         </tr>

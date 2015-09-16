@@ -33,10 +33,10 @@ def extend_demo(pool, cr, uid, localcontext, context):
 
     def get_meetings(user_id, date):
         ret = []
-        date_from =  datetime.strftime(datetime.strptime(date, '%Y-%m-%d'),"%Y-%m-%d %H:%M:%S")
+        date_from =  datetime.strftime(datetime.strptime(date, '%Y-%m-%d'), "%Y-%m-%d %H:%M:%S")
         date_to = datetime.strftime(datetime.strptime(date, '%Y-%m-%d') + timedelta(days=1),'%Y-%m-%d %H:%M:%S')
-        meeting_ids = pool.get("clinic.meeting").search(cr, uid, [('user_id', '=', user_id),('date', '>=', date_from),('date', '<', date_to)], order='date ASC')
-        meeting = pool.get("clinic.meeting").browse(cr, uid, meeting_ids)
+        meeting_ids = pool.get("calendar.event").search(cr, uid, [('user_id', '=', user_id), ('start', '>=', date_from), ('start', '<', date_to)], order='start ASC')
+        meeting = pool.get("calendar.event").browse(cr, uid, meeting_ids)
         ret = meeting
         return ret
 
