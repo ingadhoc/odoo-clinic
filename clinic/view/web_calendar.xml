@@ -7,16 +7,10 @@
             <script type="text/javascript" src="/web_calendar/static/src/js/web_calendar.js" position="replace">
                 <script type="text/javascript" src="/clinic/static/src/js/web_calendar.js"></script>
             </script>
-        </template>
-
-<!--         <template id="assets_backend" name="web_calendar assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
-                <link rel="stylesheet" href="/web_calendar/static/src/css/web_fullcalendar.css"/>
-                <link rel="stylesheet" href="/web_calendar/static/lib/fullcalendar/css/fullcalendar.css"/>
-
-                <script type="text/javascript" src="/web_calendar/static/lib/fullcalendar/js/fullcalendar.js"></script>
-                <script type="text/javascript" src="/web_calendar/static/src/js/web_calendar.js"></script>
+                <link rel="stylesheet"
+                    href="/clinic/static/src/css/web_calendar.css"/>
             </xpath>
-        </template> -->
+        </template>
     </data>
 </openerp>
