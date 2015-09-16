@@ -273,8 +273,8 @@ openerp.web_calendar = function(instance) {
                 slotMinutes: 15,
                 firstHour: 8,
                 // defaultEventMinutes: 120,
-                minTime: 7,
-                maxTime: 22,
+                minTime: 8,
+                maxTime: 18,
                 hiddenDays: [ 0, 6 ],
 
                 // callbacks
