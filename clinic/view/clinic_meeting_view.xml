@@ -76,7 +76,7 @@
     </record>
 
             <!-- SEARCHVIEW -->
-    <record model="ir.ui.view" id="view_calendar_event_form">
+    <record model="ir.ui.view" id="view_calendar_event_search">
         <field name="name">Clinic - Meetings Search</field>
         <field name="model">calendar.event</field>
         <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
