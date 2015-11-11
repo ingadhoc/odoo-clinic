@@ -1,16 +1,35 @@
-addons:
-  apt:
-    packages:
-      - expect-dev  # provides unbuffer utility
-      - python-lxml # because pip installation is slow
-      - libcups2-dev # for aeroo
-
 language: python
 sudo: false
-cache: pip
+cache:
+  apt: true
+  directories:
+    - $HOME/.cache/pip
 
 python:
-  - '2.7'
+  - "2.7"
+
+addons:
+  apt:
+# only add the two lines below if you need wkhtmltopdf for your tests
+#    sources:
+#      - pov-wkhtmltopdf
+#    Search your sources alias here:
+#      https://github.com/travis-ci/apt-source-whitelist/blob/master/ubuntu.json
+    packages:
+      - expect-dev  # provides unbuffer utility
+      - python-lxml  # because pip installation is slow
+      - python-simplejson
+      - python-serial
+      - python-yaml
+      - libcups2-dev # for aeroo
+#     Search your packages here:
+#       https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
+#      - wkhtmltopdf  # only add if needed and check the before_install section below
+
+# set up an X server to run wkhtmltopdf.
+#before_install:
+#  - "export DISPLAY=:99.0"
+#  - "sh -e /etc/init.d/xvfb start"
 
 env:
   global:
@@ -22,34 +41,29 @@ env:
   - secure: Cz6RMm4b0ees1028mQG2KzhAyEQksoHwEojFqY5EXj3Egf5ryR+00VyON/eyslMsJC5L21bv7drGC7WqGsUFG1xs14eJvVYrXXLhkrgGywpqolcRks9j/PaZEEbN5HRlOu7qwciLHd++E9sDDrVpBA/msKrbWD3+Zgxko1MTNxQp7Q3K50kg2f7wj0DuNWGB+f2Y6VnUzujJ/4i/FX5HMUZ3JD30tMhsl6VS3ChiNKsk6J2PwEhPi9Pk50FzFMQLMUhRRsoZ1/EKfw7rG+pVPS5kPz2vJQoGfWCPMXwxaV28MSlSSgzH5+I6JobHKZEtAXxt9XjLIue542+QT606RZHcfPz5dDUh3HBEM/+xHPk1p6gqm0ITuzDm0LwzgyhmkbMMYheFEnGAbg+m894+a90qUXTMwAnRZi+jiBgLEgexuWcoiuf3063vbTrU1P0YavGcQA0/1uzBRcAEe0XhgwSdmiPgC7l4HfZ1E7EpT+jXUKlDqGqUt5fISe26XTC4LjdaYmNs4W+TKj6EKrRN/1AI7urRS83S3IuPTDZDGOk5BmF1l/NwnTsLDs62EQAsQi6FjPgNm6FFiHWQsM2+hPiJOGeUnAp0ztak9x4qg3i19ihBTZeyRaalOZg1QoAj6shKU07OAaKY0ZYpdRaBn/dV+UFzdWrdGYl0TTHOdS4=
 
   matrix:
-  # TODO enable lint check
   #- LINT_CHECK="1"
   - TRANSIFEX="1"
   - TESTS="1" ODOO_REPO="odoo/odoo"
-  - UNIT_TEST="1"
+# either use the two lines above or the two below. Don't change the default if
+# it's not necessary (it is only necessary if modules in your repository can't
+# be installed in the same database. And you get a huge speed penalty in your
+# tests)
+  # - TESTS="1.0" ODOO_REPO="odoo/odoo" UNIT_TEST="1"
 
 virtualenv:
   system_site_packages: true
 
 install:
   # aeroo reports
-  - git clone https://github.com/aeroo/aeroo_reports.git -b 8.0 ${HOME}/aeroo_reports
   - pip install git+https://github.com/aeroo/aeroolib.git@master pycups==1.9.68
 
-  # odoo addons adhoc
-  - git clone https://github.com/ingadhoc/odoo-addons.git -b 8.0 ${HOME}/odoo-addons
-
-  # odoo addons argentina
-  - git clone https://github.com/ingadhoc/odoo-argentina.git -b 8.0 ${HOME}/odoo-argentina
-  - pip install geopy==0.95.1 BeautifulSoup  # becasue l10n_ar_states is installed
-
-  # oca server tools
-  - git clone https://github.com/OCA/server-tools.git ${HOME}/server-tools
+  # odoo argentina
+  - pip install geopy==0.95.1 BeautifulSoup # because l10n_ar_states module is installed
 
   # repository requirements
   - pip install -r requirements.txt
 
-  - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
 
@@ -57,4 +71,4 @@ script:
   - travis_run_tests
 
 after_success:
-  coveralls
+  - travis_after_tests_success
