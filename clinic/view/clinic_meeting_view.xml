@@ -74,6 +74,18 @@
             </field>
         </field>
     </record>
-  
+
+            <!-- SEARCHVIEW -->
+    <record model="ir.ui.view" id="view_calendar_event_search">
+        <field name="name">Clinic - Meetings Search</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_ids" position="replace">
+                <field name="user_ids" string="Asistente"/>
+            </field>
+        </field>
+    </record>
+
     </data>
 </openerp>
