@@ -714,7 +714,7 @@ openerp.web_calendar = function(instance) {
                                         label: val[1],
                                         color: self.get_color(key),
                                         avatar_model: (_.str.toBoolElse(self.avatar_filter, true) ? self.avatar_filter : false ),
-                                        is_checked: true
+                                        is_checked: false
                                     };
                                     self.all_filters[key] = filter_item;
                                 }
