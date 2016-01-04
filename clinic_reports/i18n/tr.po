@@ -3,19 +3,20 @@
 # * clinic_reports
 # 
 # Translators:
+# faradundamarti <faradundamarti@yandex.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: odoo-clinic (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-02 13:54+0000\n"
-"PO-Revision-Date: 2015-09-14 21:12+0000\n"
-"Last-Translator: Juan Jose Scarafia <scarafia.juanjose@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-odoo-clinic-8-0/language/es/)\n"
+"PO-Revision-Date: 2015-11-07 11:00+0000\n"
+"Last-Translator: faradundamarti <faradundamarti@yandex.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/adhoc/ingadhoc-odoo-clinic-8-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: clinic_reports
 #: model:email.template,body_html:clinic_reports.meeting_daily_agenda_email
@@ -72,27 +73,27 @@ msgstr ""
 #. module: clinic_reports
 #: selection:res.users,daily_schedule_mail:0
 msgid "All Medics Agenda"
-msgstr "Agenda de todos los Médicos"
+msgstr "Tüm Doktorların Gündemi"
 
 #. module: clinic_reports
 #: view:clinic_meeting_daily_agenda_wizard:clinic_reports.clinic_meeting_daily_agenda_wizard_form
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "İptal"
 
 #. module: clinic_reports
 #: model:email.template,report_name:clinic_reports.meeting_daily_agenda_email
 msgid "Clinic Agenda"
-msgstr ""
+msgstr "Klinik Gündemi"
 
 #. module: clinic_reports
 #: model:ir.actions.report.xml,name:clinic_reports.clinic_meeting_daily_agenda
 msgid "Clinic Meeting Daily Agenda"
-msgstr "Agenda Diaria - Reunión Clinic "
+msgstr "Klinik Günlük Toplantı Gündemi"
 
 #. module: clinic_reports
 #: field:clinic_meeting_daily_agenda_wizard,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Oluşturan"
 
 #. module: clinic_reports
 #: field:clinic_meeting_daily_agenda_wizard,create_date:0
@@ -104,12 +105,12 @@ msgstr ""
 #: model:ir.actions.act_window,name:clinic_reports.action_clinic_meeting_daily_agenda_wizard
 #: model:ir.ui.menu,name:clinic_reports.menu_clinic_meeting_daily_agenda_wizard
 msgid "Daily agenda"
-msgstr "Agenda diaria"
+msgstr "Günlük Gündem"
 
 #. module: clinic_reports
 #: field:clinic_meeting_daily_agenda_wizard,date:0
 msgid "Date"
-msgstr "Fecha"
+msgstr "Tarih"
 
 #. module: clinic_reports
 #: report:addons/clinic_reports/report/daily_agenda/clinic_meeting_daily_agenda.mako:67
@@ -124,12 +125,12 @@ msgstr ""
 #. module: clinic_reports
 #: field:clinic_meeting_daily_agenda_wizard,id:0
 msgid "ID"
-msgstr ""
+msgstr "Kimlik"
 
 #. module: clinic_reports
 #: field:clinic_meeting_daily_agenda_wizard,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "En Son Güncelleyen"
 
 #. module: clinic_reports
 #: field:clinic_meeting_daily_agenda_wizard,write_date:0
@@ -144,17 +145,17 @@ msgstr ""
 #. module: clinic_reports
 #: field:clinic_meeting_daily_agenda_wizard,user_ids:0
 msgid "Medics"
-msgstr "Médicos"
+msgstr "Doktorlar"
 
 #. module: clinic_reports
 #: selection:res.users,daily_schedule_mail:0
 msgid "My Agenda"
-msgstr "Mi Agenda"
+msgstr "Benim Gündemim"
 
 #. module: clinic_reports
 #: selection:res.users,daily_schedule_mail:0
 msgid "Never"
-msgstr "Nunca"
+msgstr "Hiçbir zaman"
 
 #. module: clinic_reports
 #: report:addons/clinic_reports/report/daily_agenda/clinic_meeting_daily_agenda.mako:77
@@ -169,19 +170,19 @@ msgstr ""
 #. module: clinic_reports
 #: view:clinic_meeting_daily_agenda_wizard:clinic_reports.clinic_meeting_daily_agenda_wizard_form
 msgid "Print"
-msgstr "Imprimir"
+msgstr "Yazdırma"
 
 #. module: clinic_reports
 #: field:res.users,daily_schedule_mail:0
 msgid "Receive Daily Agenda"
-msgstr "Recibir Agenda Diaria"
+msgstr "Günlük Gündemi Alma"
 
 #. module: clinic_reports
 #: model:ir.ui.menu,name:clinic_reports.menu_clinic_reports
 msgid "Reports"
-msgstr "Informes"
+msgstr "Bildirimler"
 
 #. module: clinic_reports
 #: model:ir.model,name:clinic_reports.model_res_users
 msgid "Users"
-msgstr "Usuarios"
+msgstr "Kullanıcılar"

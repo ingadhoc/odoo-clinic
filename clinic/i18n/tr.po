@@ -3,56 +3,56 @@
 # * clinic
 # 
 # Translators:
-# Nicolas Mac Rouillon <nmr@ingadhoc.com>, 2016
+# faradundamarti <faradundamarti@yandex.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: odoo-clinic (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-02 13:53+0000\n"
-"PO-Revision-Date: 2016-01-04 15:07+0000\n"
-"Last-Translator: Nicolas Mac Rouillon <nmr@ingadhoc.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/adhoc/ingadhoc-odoo-clinic-8-0/language/es/)\n"
+"PO-Revision-Date: 2015-11-11 20:13+0000\n"
+"Last-Translator: Juan Jose Scarafia <scarafia.juanjose@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/adhoc/ingadhoc-odoo-clinic-8-0/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "\"base.group_no_one\""
-msgstr "\"base.group_no_one\""
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "(edit company address)"
-msgstr "(Editar dirección de la empresa)"
+msgstr ""
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:1313
 #, python-format
 msgid "Add"
-msgstr "Añadir"
+msgstr "Ekle"
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Address"
-msgstr "Dirección"
+msgstr "Adres"
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:27
 #, python-format
 msgid "All day"
-msgstr "Todo el día"
+msgstr ""
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:935
 #, python-format
 msgid "Are you sure you want to delete this record ?"
-msgstr "¿Está seguro que quiere eliminar este registro?"
+msgstr "Bu kayıdı silmek istediğinizden emin misiniz?"
 
 #. module: clinic
 #: view:calendar.event:clinic.view_calendar_event_search
@@ -63,24 +63,24 @@ msgstr ""
 #: view:res.partner:clinic.view_res_partner_clinic_form
 #: field:res.partner,assigned_medic_id:0
 msgid "Assigned Medic"
-msgstr "Médico Asignado"
+msgstr "Görevli Doktor"
 
 #. module: clinic
 #: field:calendar.event,user_ids:0
 msgid "Attendees"
-msgstr "Asistentes"
+msgstr "Katılımcılar"
 
 #. module: clinic
 #: field:res.partner,birthday:0
 msgid "Birthday"
-msgstr "Cumpleaños"
+msgstr "Doğum Günü"
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:79
 #, python-format
 msgid "Calendar"
-msgstr "Calendario"
+msgstr "Takvim"
 
 #. module: clinic
 #. openerp-web
@@ -92,69 +92,69 @@ msgstr ""
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "City"
-msgstr "Ciudad"
+msgstr "Şehir"
 
 #. module: clinic
 #: model:ir.module.category,description:clinic.module_category_clinic
 #: model:ir.module.category,name:clinic.module_category_clinic
 #: model:ir.ui.menu,name:clinic.menu_clinic
 msgid "Clinic"
-msgstr "Clinic"
+msgstr "Klinik"
 
 #. module: clinic
 #: model:ir.model,name:clinic.model_clinic_medical_record
 msgid "Clinic Medical Record"
-msgstr "Clinic Medical Record"
+msgstr "Klinik Tıbbi Kaydı"
 
 #. module: clinic
 #: model:res.request.link,name:clinic.request_link_meeting
 msgid "Clinic Meeting"
-msgstr "Reunión Clinic"
+msgstr ""
 
 #. module: clinic
 #: field:res.partner,html_comment:0
 msgid "Comment"
-msgstr "Comentario"
+msgstr "Yorum"
 
 #. module: clinic
 #: model:ir.ui.menu,name:clinic.menu_configuration
 msgid "Configuration"
-msgstr "Configuración"
+msgstr "Yapılandırma"
 
 #. module: clinic
 #: model:ir.ui.menu,name:clinic.menu_contacts
 msgid "Contacts"
-msgstr "Contactos"
+msgstr "Bağlantılar"
 
 #. module: clinic
 #: field:clinic.medical_record,body:0
 msgid "Content"
-msgstr "Contenido"
+msgstr "İçerik"
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Country"
-msgstr "País"
+msgstr "Ülke"
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:968
 #, python-format
 msgid "Create"
-msgstr ""
+msgstr "Oluştur"
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:973
 #, python-format
 msgid "Create: "
-msgstr ""
+msgstr "Oluştur: "
 
 #. module: clinic
 #: field:clinic.medical_insurance,create_uid:0
 #: field:clinic.medical_record,create_uid:0 field:clinic.room,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Oluşturan"
 
 #. module: clinic
 #: field:clinic.medical_insurance,create_date:0
@@ -165,7 +165,7 @@ msgstr ""
 #. module: clinic
 #: field:res.partner,dni:0
 msgid "DNI"
-msgstr "DNI"
+msgstr ""
 
 #. module: clinic
 #. openerp-web
@@ -177,33 +177,33 @@ msgstr ""
 #. module: clinic
 #: field:clinic.medical_record,date:0
 msgid "Date"
-msgstr "Fecha"
+msgstr "Tarih"
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:32
 #, python-format
 msgid "Day"
-msgstr "Día"
+msgstr "Gün"
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:855
 #, python-format
 msgid "Delete"
-msgstr "Suprimir"
+msgstr "Sil"
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:856
 #, python-format
 msgid "Edit Event"
-msgstr "Editar evento"
+msgstr "Vakayı Düzenle"
 
 #. module: clinic
 #: model:ir.model,name:clinic.model_calendar_event
 msgid "Event"
-msgstr ""
+msgstr "Vaka"
 
 #. module: clinic
 #: field:res.partner,facebook:0
@@ -213,29 +213,29 @@ msgstr "Facebook"
 #. module: clinic
 #: view:calendar.event:clinic.view_calendar_event_calendar
 msgid "False"
-msgstr ""
+msgstr "Yanlış"
 
 #. module: clinic
 #: field:clinic.medical_insurance,id:0 field:clinic.medical_record,id:0
 #: field:clinic.room,id:0
 msgid "ID"
-msgstr "ID"
+msgstr "Kimlik"
 
 #. module: clinic
 #: field:res.partner,insurance_number:0
 msgid "Insurance Number"
-msgstr "Número de Afiliado"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Internal Notes"
-msgstr "Notas internas"
+msgstr ""
 
 #. module: clinic
 #: field:clinic.medical_insurance,write_uid:0
 #: field:clinic.medical_record,write_uid:0 field:clinic.room,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "En Son Güncelleyen"
 
 #. module: clinic
 #: field:clinic.medical_insurance,write_date:0
@@ -246,40 +246,40 @@ msgstr ""
 #. module: clinic
 #: field:calendar.event,mail_sent:0
 msgid "Mail Sent"
-msgstr "Correo enviado"
+msgstr ""
 
 #. module: clinic
 #: model:res.groups,name:clinic.group_manager
 msgid "Manager"
-msgstr "Responsable"
+msgstr "Yönetici"
 
 #. module: clinic
 #: field:clinic.medical_record,user_id:0 field:res.partner,is_medic:0
 msgid "Medic"
-msgstr "Médico"
+msgstr "Doktor"
 
 #. module: clinic
 #: view:res.partner:clinic.view_contact_filter
 msgid "Medic Partners"
-msgstr "Médicos"
+msgstr ""
 
 #. module: clinic
 #: model:ir.actions.act_window,name:clinic.action_clinic_medical_insurance_medical_insurance
 #: model:ir.ui.menu,name:clinic.menu_medical_insurance
 #: field:res.partner,medical_insurance_id:0
 msgid "Medical Insurance"
-msgstr "Obra Social"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Medical Insurence"
-msgstr "Medical Insurence"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 #: field:res.partner,medical_record_ids:0
 msgid "Medical Record"
-msgstr "Historia clínica"
+msgstr ""
 
 #. module: clinic
 #: model:ir.ui.menu,name:clinic.menu_meeting_type
@@ -290,7 +290,7 @@ msgstr ""
 #: view:res.partner:clinic.view_res_partner_clinic_form
 #: field:res.partner,meeting_ids:0
 msgid "Meetings"
-msgstr "Reuniones"
+msgstr ""
 
 #. module: clinic
 #. openerp-web
@@ -304,98 +304,98 @@ msgstr ""
 #: code:addons/clinic/static/src/js/web_calendar.js:30
 #, python-format
 msgid "Month"
-msgstr "Mes"
+msgstr "Ay"
 
 #. module: clinic
 #: field:clinic.medical_insurance,name:0 field:clinic.room,name:0
 msgid "Name"
-msgstr "Nombre"
+msgstr "Ad"
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Name..."
-msgstr "Nombre ..."
+msgstr "Ad..."
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Number..."
-msgstr "Número ..."
+msgstr "Numara..."
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:1365
 #, python-format
 msgid "Open: "
-msgstr "Abrir: "
+msgstr "Açık:"
 
 #. module: clinic
 #: model:ir.ui.menu,name:clinic.menu_clinic_organizer
 msgid "Organizer"
-msgstr "Organizador"
+msgstr ""
 
 #. module: clinic
 #: model:ir.model,name:clinic.model_res_partner
 msgid "Partner"
-msgstr "Empresa"
+msgstr ""
 
 #. module: clinic
 #: field:calendar.event,patient_id:0 field:clinic.medical_record,partner_id:0
 #: field:res.partner,is_patient:0
 msgid "Patient"
-msgstr "Paciente"
+msgstr "Hasta"
 
 #. module: clinic
 #: view:res.partner:clinic.view_contact_filter
 msgid "Patient Partners"
-msgstr "Pacientes"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Put an internal note..."
-msgstr "Ponga una nota interna ..."
+msgstr ""
 
 #. module: clinic
 #: field:calendar.event,room_id:0 model:ir.model,name:clinic.model_clinic_room
 msgid "Room"
-msgstr "Habitación"
+msgstr ""
 
 #. module: clinic
 #: model:ir.actions.act_window,name:clinic.action_clinic_room_room
 #: model:ir.ui.menu,name:clinic.menu_room
 msgid "Rooms"
-msgstr "Habitaciones"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Sales & Purchases"
-msgstr "Ventas y Compras"
+msgstr ""
 
 #. module: clinic
 #: field:res.partner,skype:0
 msgid "Skype"
-msgstr "Skype"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "State"
-msgstr "Provincia"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "Street..."
-msgstr "Street..."
+msgstr ""
 
 #. module: clinic
 #. openerp-web
 #: code:addons/clinic/static/src/js/web_calendar.js:29
 #, python-format
 msgid "Today"
-msgstr "Hoy"
+msgstr ""
 
 #. module: clinic
 #: model:res.groups,name:clinic.group_user
 msgid "User"
-msgstr "Usuario"
+msgstr ""
 
 #. module: clinic
 #. openerp-web
@@ -414,7 +414,7 @@ msgstr ""
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "ZIP"
-msgstr "Cód. ZIP"
+msgstr ""
 
 #. module: clinic
 #: view:calendar.event:clinic.view_calendar_event_calendar
@@ -424,24 +424,24 @@ msgstr ""
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "base.group_no_one"
-msgstr "base.group_no_one"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "e.g. +32.81.81.37.00"
-msgstr "por ejemplo +32.81.81.37.00"
+msgstr ""
 
 #. module: clinic
 #: view:res.partner:clinic.view_res_partner_clinic_form
 msgid "e.g. www.openerp.com"
-msgstr "por ejemplo www.openerp.com"
+msgstr ""
 
 #. module: clinic
 #: view:clinic.medical_record:clinic.view_clinic_medical_record_filter
 #: view:clinic.medical_record:clinic.view_clinic_medical_record_form
 #: view:clinic.medical_record:clinic.view_clinic_medical_record_tree
 msgid "medical.record"
-msgstr "medical.record"
+msgstr ""
 
 #. module: clinic
 #: view:clinic.medical_insurance:clinic.view_clinic_medical_insurance_filter
@@ -449,19 +449,19 @@ msgstr "medical.record"
 #: view:clinic.medical_insurance:clinic.view_clinic_medical_insurance_tree
 #: model:ir.model,name:clinic.model_clinic_medical_insurance
 msgid "medical_insurance"
-msgstr "medical_insurance"
+msgstr ""
 
 #. module: clinic
 #: field:clinic.medical_insurance,patient_ids:0
 msgid "patient_ids"
-msgstr "patient_ids"
+msgstr ""
 
 #. module: clinic
 #: view:clinic.room:clinic.view_clinic_room_filter
 #: view:clinic.room:clinic.view_clinic_room_form
 #: view:clinic.room:clinic.view_clinic_room_tree
 msgid "room"
-msgstr "room"
+msgstr ""
 
 #. module: clinic
 #: view:calendar.event:clinic.view_calendar_event_calendar
