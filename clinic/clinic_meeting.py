@@ -26,6 +26,10 @@ class clinic_meeting(models.Model):
         string='Responsible Medic',
         domain="[('is_medic','=',True)]"
         )
+    user_partner_ids = fields.Many2many(
+        'res.partner',
+        compute='get_user_partners',
+        )
     user_ids = fields.Many2many(
         'res.users',
         'clinic_meeting_user_rel',
@@ -54,6 +58,15 @@ class clinic_meeting(models.Model):
     duration = fields.Float(
         default='0.5'
         )
+
+    @api.one
+    @api.depends(
+        'user_ids.partner_id',
+        'user_id.partner_id',
+        )
+    def get_user_partners(self):
+        self.user_partner_ids = self.mapped(
+            'user_ids.partner_id') + self.user_id.partner_id
 
     @api.onchange('patient_id')
     def onchange_patient(self):

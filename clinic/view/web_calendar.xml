@@ -4,6 +4,7 @@
 <openerp>
     <data>
         <template id="clinic_assets_backend" name="clinic web_calendar assets" inherit_id="web_calendar.assets_backend">
+            <!-- replace web calendar module file -->
             <script type="text/javascript" src="/web_calendar/static/src/js/web_calendar.js" position="replace">
                 <script type="text/javascript" src="/clinic/static/src/js/web_calendar.js"></script>
             </script>
