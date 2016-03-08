@@ -39,6 +39,6 @@ Clinic Module
         # 'data/mail_data.xml',
         'data/clinic_data.xml',
     ],
-    'version': '8.0.0.2.0',
+    'version': '8.0.0.3.0',
  }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -8,6 +8,10 @@
             <script type="text/javascript" src="/web_calendar/static/src/js/web_calendar.js" position="replace">
                 <script type="text/javascript" src="/clinic/static/src/js/web_calendar.js"></script>
             </script>
+            <!-- replace calendar module file -->
+            <script type="text/javascript" src="/calendar/static/src/js/base_calendar.js" position="replace">
+                <script type="text/javascript" src="/clinic/static/src/js/calendar.js"></script>
+            </script>
             <xpath expr="." position="inside">
                 <link rel="stylesheet"
                     href="/clinic/static/src/css/web_calendar.css"/>
